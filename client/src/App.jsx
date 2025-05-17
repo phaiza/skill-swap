@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
+import AddSkills from './pages/AddSkills';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -28,6 +29,15 @@ function App() {
           element={
             <PrivateRoute>
               <Profile />
+            </PrivateRoute>
+          }
+        />
+        import AddSkills from './pages/AddSkills';
+        <Route
+          path="/add-skills"
+          element={
+            <PrivateRoute>
+              <AddSkills />
             </PrivateRoute>
           }
         />

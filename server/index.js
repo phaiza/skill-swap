@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import authRoutes from './routes/authRoutes.js';
+import skillRoutes from './routes/skillRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 });
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/skills', skillRoutes);
 
 const PORT = process.env.PORT || 5001;
 mongoose
