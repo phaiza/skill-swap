@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import SkillItem from '../components/SkillItem';
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function Dashboard() {
   const { user, token } = useSelector((state) => state.auth);
@@ -11,7 +12,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/skills', {
+        const res = await fetch(`${API_BASE}/skills`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

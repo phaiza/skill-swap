@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function AddSkills() {
   const [form, setForm] = useState({ name: '', level: 'Beginner' });
@@ -15,7 +16,7 @@ function AddSkills() {
     setMessage('');
 
     try {
-      const res = await fetch('http://localhost:5001/api/skills', {
+      const res = await fetch(`${API_BASE}/skills`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

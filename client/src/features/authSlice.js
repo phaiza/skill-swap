@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Backend URL
-const API_URL = 'http://localhost:5001/api/auth';
-
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+const API_URL = `${API_BASE}/auth`;
 // Async Thunk: Register user
 export const registerUser = createAsyncThunk(
   'auth/registerUser',

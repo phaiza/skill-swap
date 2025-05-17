@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function FindMatch() {
   const { token } = useSelector((state) => state.auth);
@@ -7,7 +8,7 @@ function FindMatch() {
 
   useEffect(() => {
     const fetchMatches = async () => {
-      const res = await fetch('http://localhost:5001/api/skills/matches', {
+      const res = await fetch(`${API_BASE}/skills/matches`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

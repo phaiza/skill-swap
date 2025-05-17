@@ -1,4 +1,5 @@
 import { useState } from 'react';
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function SkillItem({ skill, token, onUpdate, onDelete }) {
   const [editing, setEditing] = useState(false);
@@ -9,7 +10,7 @@ function SkillItem({ skill, token, onUpdate, onDelete }) {
   };
 
   const handleUpdate = async () => {
-    const res = await fetch(`http://localhost:5001/api/skills/${skill._id}`, {
+    const res = await fetch(`${API_BASE}/skills/${skill._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +25,7 @@ function SkillItem({ skill, token, onUpdate, onDelete }) {
   };
 
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:5001/api/skills/${skill._id}`, {
+    const res = await fetch(`${API_BASE}/skills/${skill._id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
