@@ -43,3 +43,39 @@ SkillSwap is a full stack web app that lets users sign up, log in, and add their
 ```bash
 cd server
 npm install
+```
+
+Create a .env file in server/:
+
+PORT=5001
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
+
+Run the server:
+```bash
+npx nodemon index.js
+```
+
+### 💻 Frontend Setup
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173 in your browser.
+
+### 🔐 Folder Structure
+
+skill-swap/
+│
+├── client/           # React frontend (Vite)
+│   ├── src/
+│   │   ├── pages/    # Register, Login, Profile, Dashboard, AddSkills
+│   │   ├── features/ # Redux slices
+│   │   └── components/ # Navbar, PrivateRoute
+│
+├── server/           # Express backend
+│   ├── models/       # Mongoose schemas (User, Skill)
+│   ├── routes/       # Auth and skill routes
+│   └── controllers/  # Logic for each route
