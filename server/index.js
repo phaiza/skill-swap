@@ -3,16 +3,18 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
+import authRoutes from './routes/authRoutes.js';
+
 dotenv.config();
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Test route
-app.get('/', (req, res) => {
-  res.send('API running...');
-});
+// Routes
+app.use('/api/auth', authRoutes);
+
+app.get('/', (req, res) => res.send('API is working'));
 
 const PORT = process.env.PORT || 5000;
 mongoose
@@ -20,4 +22,4 @@ mongoose
   .then(() =>
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
   )
-  .catch((err) => console.error(err));
+  .catch((err) => console.log(err));
