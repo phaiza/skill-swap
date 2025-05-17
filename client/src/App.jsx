@@ -6,6 +6,7 @@ import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import AddSkills from './pages/AddSkills';
+import FindMatch from './pages/FindMatch';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -38,6 +39,22 @@ function App() {
           element={
             <PrivateRoute>
               <AddSkills />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/find-match"
+          element={
+            <PrivateRoute>
+              <FindMatch />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/find-match"
+          element={
+            <PrivateRoute>
+              <FindMatch />
             </PrivateRoute>
           }
         />
