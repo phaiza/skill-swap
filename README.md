@@ -66,7 +66,7 @@ npm run dev
 Then open http://localhost:5173 in your browser.
 
 ### 🔐 Folder Structure
-
+```bash
 skill-swap/
 │
 ├── client/           # React frontend (Vite)
@@ -78,4 +78,5 @@ skill-swap/
 ├── server/           # Express backend
 │   ├── models/       # Mongoose schemas (User, Skill)
 │   ├── routes/       # Auth and skill routes
-│   └── controllers/  # Logic for each route
+│   └── controllers/  # Logic for each 
+```
