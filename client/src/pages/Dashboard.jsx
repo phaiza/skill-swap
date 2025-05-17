@@ -35,7 +35,10 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h2>Hello, {user.name} 👋</h2>
+      <h2 className="text-2xl font-bold text-center text-blue-600 mb-4">
+        Hello, {user.name} 👋
+      </h2>
+
       <p>Welcome to your SkillSwap dashboard!</p>
 
       <div style={{ marginTop: '20px' }}>
