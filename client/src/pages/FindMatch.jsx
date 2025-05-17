@@ -20,22 +20,42 @@ function FindMatch() {
   }, [token]);
 
   return (
-    <div className="dashboard">
-      <h2>🔍 Find Skill Matches</h2>
+    <div className="max-w-4xl mx-auto mt-10 px-4">
+      <h2 className="text-3xl font-bold text-blue-700 mb-4">
+        Find Skill Matches
+      </h2>
+
       {matches.length === 0 ? (
-        <p>No matches found yet. Add some skills or check back later!</p>
+        <p className="text-gray-600">
+          No matches found yet. Add some skills or check back later!
+        </p>
       ) : (
-        <ul>
-          {matches.map((m) => (
-            <li key={m.user._id} style={{ marginBottom: '1.5rem' }}>
-              <strong>{m.user.name}</strong> — {m.user.email}
-              <ul>
-                {m.skills.map((s, index) => (
-                  <li key={index}>
-                    {s.name} ({s.level})
-                  </li>
-                ))}
-              </ul>
+        <ul className="space-y-6">
+          {matches.map((match) => (
+            <li
+              key={match.user._id}
+              className="border border-gray-200 p-4 rounded shadow-sm bg-white"
+            >
+              <div className="mb-2">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {match.user.name}
+                </h3>
+                <p className="text-sm text-gray-500">{match.user.email}</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-gray-700 mb-1">Shared Skills:</p>
+                <ul className="list-disc list-inside text-gray-700 text-sm">
+                  {match.skills.map((skill, index) => (
+                    <li key={index}>
+                      {skill.name}{' '}
+                      <span className="italic text-gray-500">
+                        ({skill.level})
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
           ))}
         </ul>
