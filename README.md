@@ -2,6 +2,10 @@
 
 SkillSwap is a full stack web app that lets users sign up, log in, and add their personal skill set. It's designed to help people exchange skills with others — a step toward building a collaborative learning network.
 
+## 🌐 Live Demo
+
+[https://skill-swap-puce.vercel.app](https://skill-swap-puce.vercel.app)
+
 ---
 
 ## 🧑‍💻 Built With
